@@ -65,7 +65,7 @@ const trustStrip = [
 ];
 
 function Home() {
-  const product = products[0];
+  const product = products[0]!;
 
   return (
     <>

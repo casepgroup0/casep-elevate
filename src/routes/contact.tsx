@@ -48,7 +48,12 @@ const budgetOptions = [
   "$15,000+",
 ];
 
-type Errors = Partial<Record<string, string>>;
+type Errors = {
+  fullName?: string;
+  email?: string;
+  service?: string;
+  message?: string;
+};
 
 function ContactPage() {
   const [errors, setErrors] = useState<Errors>({});
@@ -239,8 +244,8 @@ function Field({
 }: {
   id: string;
   label: string;
-  error?: string;
-  required?: boolean;
+  error?: string | undefined;
+  required?: boolean | undefined;
   children: React.ReactNode;
 }) {
   return (
