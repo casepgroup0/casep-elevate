@@ -1,0 +1,106 @@
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { Check } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Reveal } from "@/components/site/Reveal";
+import { Section, SectionHeading } from "@/components/site/Section";
+import { CTASection, PageHero } from "@/components/site/blocks";
+import { products } from "@/data/site";
+import dashboardImage from "@/assets/school-dashboard.jpg";
+
+const title = "Products — School Management System | CASEP GROUP";
+const description =
+  "CASEP GROUP products, including a school management system for student records, fees, payments, communication, and administrative reporting.";
+
+export const Route = createFileRoute("/products")({
+  head: () => ({
+    meta: [
+      { title },
+      { name: "description", content: description },
+      { property: "og:title", content: title },
+      { property: "og:description", content: description },
+      { property: "og:type", content: "website" },
+      { property: "og:url", content: "/products" },
+    ],
+    links: [{ rel: "canonical", href: "/products" }],
+  }),
+  component: ProductsPage,
+});
+
+function ProductsPage() {
+  return (
+    <>
+      <PageHero
+        eyebrow="CASEP GROUP Products"
+        title="Products Built for Recurring Organizational Challenges."
+        description="Technology products designed to solve problems we see repeatedly across schools, businesses, and institutions."
+      >
+        <Button asChild variant="brand" size="xl">
+          <Link to="/contact">Request a Demo</Link>
+        </Button>
+      </PageHero>
+
+      {products.map((product) => (
+        <Section key={product.slug}>
+          <div className="grid items-start gap-12 lg:grid-cols-2">
+            <Reveal>
+              <img
+                src={dashboardImage}
+                alt={`${product.name} dashboard preview showing student records and fee collection`}
+                width={1600}
+                height={1008}
+                loading="lazy"
+                className="w-full rounded-2xl border border-border shadow-lift"
+              />
+            </Reveal>
+            <Reveal delay={100}>
+              <span className="inline-flex rounded-full bg-accent px-3 py-1 text-xs font-bold uppercase tracking-wide text-primary">
+                {product.status}
+              </span>
+              <h2 className="mt-4 text-3xl font-bold md:text-4xl">{product.name}</h2>
+              <p className="mt-4 text-base leading-relaxed text-muted-foreground">
+                {product.description}
+              </p>
+
+              <h3 className="mt-8 text-sm font-semibold uppercase tracking-wide text-muted-foreground">
+                Key features
+              </h3>
+              <ul className="mt-4 grid gap-2 sm:grid-cols-2">
+                {product.features.map((feature) => (
+                  <li key={feature} className="flex items-start gap-2 text-sm">
+                    <Check className="mt-0.5 h-4 w-4 shrink-0 text-primary" aria-hidden="true" />
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+
+              <h3 className="mt-8 text-sm font-semibold uppercase tracking-wide text-muted-foreground">
+                Target users
+              </h3>
+              <p className="mt-2 text-sm text-muted-foreground">{product.audience}</p>
+
+              <div className="mt-8 flex flex-wrap gap-3">
+                <Button asChild variant="brand" size="lg">
+                  <Link to="/contact">Request a Demo</Link>
+                </Button>
+                <Button asChild variant="softOutline" size="lg">
+                  <Link to="/contact">Talk to CASEP GROUP</Link>
+                </Button>
+              </div>
+            </Reveal>
+          </div>
+        </Section>
+      ))}
+
+      <Section tone="surface">
+        <SectionHeading
+          eyebrow="Roadmap"
+          title="More Products in Progress."
+          description="Additional products will be published here as they move from development into release."
+          align="center"
+        />
+      </Section>
+
+      <CTASection />
+    </>
+  );
+}

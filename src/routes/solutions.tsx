@@ -1,0 +1,51 @@
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { Button } from "@/components/ui/button";
+import {
+  CTASection,
+  DifferentiatorBand,
+  IndustriesGrid,
+  PageHero,
+  SolutionsGrid,
+} from "@/components/site/blocks";
+
+const title = "Solutions — Systems That Solve Business Problems | CASEP GROUP";
+const description =
+  "School management, business management, financial management, HR and workforce systems, and custom enterprise solutions built by CASEP GROUP.";
+
+export const Route = createFileRoute("/solutions")({
+  head: () => ({
+    meta: [
+      { title },
+      { name: "description", content: description },
+      { property: "og:title", content: title },
+      { property: "og:description", content: description },
+      { property: "og:type", content: "website" },
+      { property: "og:url", content: "/solutions" },
+    ],
+    links: [{ rel: "canonical", href: "/solutions" }],
+  }),
+  component: SolutionsPage,
+});
+
+function SolutionsPage() {
+  return (
+    <>
+      <PageHero
+        eyebrow="Solutions"
+        title="Solutions That Solve Business Problems."
+        description="We start with the operational problem — slow admissions, manual invoicing, scattered records — and design the system that removes it."
+      >
+        <Button asChild variant="brand" size="xl">
+          <Link to="/contact">Discuss Your Requirements</Link>
+        </Button>
+        <Button asChild variant="onDark" size="xl">
+          <Link to="/products">See Our Products</Link>
+        </Button>
+      </PageHero>
+      <SolutionsGrid />
+      <DifferentiatorBand />
+      <IndustriesGrid />
+      <CTASection />
+    </>
+  );
+}
