@@ -7,20 +7,44 @@ export const company = {
   name: "CASEP GROUP",
   tagline: "Transforming Organizations Through Technology.",
   founder: "Caleb Agyei Sey",
-  // Placeholder contact details — update with real information.
-  email: "hello@casepgroup.com",
-  phone: "+233 00 000 0000",
+  email: "casepgroup0@gmail.com",
+  phone: "+233 245 720 660",
   location: "Accra, Ghana",
   hours: "Monday – Friday, 9:00 – 17:00 GMT",
 };
 
+/**
+ * Social links rendered as icons in the footer.
+ * `icon` maps to a component in @/components/site/SocialIcon.
+ * WhatsApp uses a wa.me deep link built from the company phone number.
+ */
 export const socialLinks = [
-  { label: "LinkedIn", href: "#" },
-  { label: "Facebook", href: "#" },
-  { label: "Instagram", href: "#" },
-  { label: "X", href: "#" },
-  { label: "TikTok", href: "#" },
-];
+  {
+    label: "LinkedIn",
+    icon: "linkedin",
+    href: "https://www.linkedin.com/in/casep-group-cg",
+  },
+  {
+    label: "Facebook",
+    icon: "facebook",
+    href: "https://www.facebook.com/caleb.agyeisey",
+  },
+  {
+    label: "Instagram",
+    icon: "instagram",
+    href: "https://www.instagram.com/podiumtrump?igsh=MThoaGYydDU0NHplMg==",
+  },
+  {
+    label: "X",
+    icon: "x",
+    href: "https://x.com/PodiumTrump1",
+  },
+  {
+    label: "WhatsApp",
+    icon: "whatsapp",
+    href: "https://wa.me/233245720660",
+  },
+] as const;
 
 export const navLinks = [
   { label: "Home", to: "/" },

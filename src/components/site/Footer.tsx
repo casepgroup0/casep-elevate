@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { Mail, MapPin, Phone } from "lucide-react";
 import { company, services, socialLinks } from "@/data/site";
 import { Logo } from "./Logo";
+import { SocialIcon } from "./SocialIcon";
 
 const companyLinks = [
   { label: "About", to: "/about" },
@@ -98,9 +99,13 @@ export function Footer() {
               <li key={social.label}>
                 <a
                   href={social.href}
-                  className="inline-flex rounded-md border border-navy-foreground/20 px-3 py-1.5 text-xs font-medium text-navy-foreground/80 transition-colors hover:border-cyan hover:text-cyan"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={social.label}
+                  title={social.label}
+                  className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-navy-foreground/20 text-navy-foreground/80 transition-colors hover:border-cyan hover:text-cyan"
                 >
-                  {social.label}
+                  <SocialIcon name={social.icon} className="h-4 w-4" />
                 </a>
               </li>
             ))}
