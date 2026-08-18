@@ -130,7 +130,7 @@ function Home() {
       </section>
 
       {/* About preview */}
-      <Section>
+      <Section decorated>
         <div className="grid items-center gap-12 lg:grid-cols-2">
           <Reveal>
             <p className="text-sm font-semibold tracking-wide text-primary">About CASEP GROUP</p>

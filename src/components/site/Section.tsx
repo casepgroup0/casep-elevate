@@ -7,23 +7,40 @@ export function Section({
   className,
   tone = "default",
   id,
+  decorated = false,
 }: {
   children: ReactNode;
   className?: string;
   tone?: "default" | "surface" | "navy";
   id?: string;
+  /** Adds a subtle dot-grid texture and soft blurred color blobs behind the content. */
+  decorated?: boolean;
 }) {
   return (
     <section
       id={id}
       className={cn(
-        "py-20 md:py-28",
+        "relative py-20 md:py-28",
         tone === "surface" && "bg-surface",
         tone === "navy" && "bg-gradient-navy text-navy-foreground",
+        decorated && "overflow-hidden",
         className,
       )}
     >
-      <div className="container-page">{children}</div>
+      {decorated ? (
+        <>
+          <div className="absolute inset-0 bg-dot-grid opacity-70" aria-hidden="true" />
+          <div
+            className="absolute -left-24 top-0 h-72 w-72 rounded-full bg-primary/10 blur-3xl"
+            aria-hidden="true"
+          />
+          <div
+            className="absolute -right-20 bottom-0 h-80 w-80 rounded-full bg-cyan/10 blur-3xl"
+            aria-hidden="true"
+          />
+        </>
+      ) : null}
+      <div className="container-page relative">{children}</div>
     </section>
   );
 }

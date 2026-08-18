@@ -55,7 +55,7 @@ export function PageHero({
 
 export function ServicesGrid({ tone = "default" }: { tone?: "default" | "surface" }) {
   return (
-    <Section tone={tone} id="services">
+    <Section tone={tone} id="services" decorated>
       <SectionHeading
         eyebrow="Services"
         title="Technology Solutions Designed for Real-World Impact."
@@ -90,7 +90,7 @@ export function ServicesGrid({ tone = "default" }: { tone?: "default" | "surface
 
 export function SolutionsGrid({ tone = "default" }: { tone?: "default" | "surface" }) {
   return (
-    <Section tone={tone} id="solutions">
+    <Section tone={tone} id="solutions" decorated>
       <SectionHeading
         eyebrow="Solutions"
         title="Solutions That Solve Business Problems."
@@ -128,7 +128,7 @@ export function SolutionsGrid({ tone = "default" }: { tone?: "default" | "surfac
 
 export function WhyGrid() {
   return (
-    <Section tone="surface">
+    <Section tone="surface" decorated>
       <SectionHeading
         eyebrow="Why CASEP GROUP"
         title="Why Organizations Choose CASEP GROUP"
@@ -179,7 +179,7 @@ export function ProcessTimeline() {
 
 export function IndustriesGrid({ tone = "surface" }: { tone?: "default" | "surface" }) {
   return (
-    <Section tone={tone} id="industries">
+    <Section tone={tone} id="industries" decorated>
       <SectionHeading
         eyebrow="Industries"
         title="Technology for Different Industries."
@@ -256,7 +256,7 @@ export function TechnologyStrip() {
 
 export function CaseStudiesGrid() {
   return (
-    <Section tone="surface">
+    <Section tone="surface" decorated>
       <SectionHeading
         eyebrow="Case studies"
         title="Work Framed Around Outcomes."
@@ -347,7 +347,7 @@ export function StatsBand() {
 
 export function InsightsGrid({ tone = "default" }: { tone?: "default" | "surface" }) {
   return (
-    <Section tone={tone}>
+    <Section tone={tone} decorated>
       <SectionHeading
         eyebrow="Insights"
         title="Perspectives on Technology and Operations."
