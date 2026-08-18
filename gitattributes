@@ -1,0 +1,26 @@
+# Force consistent LF line endings for all text files, regardless of each
+# contributor's local Git/OS line-ending settings (core.autocrlf).
+# This prevents Prettier/ESLint from flagging false "Delete CR" errors on
+# Windows, where Git may otherwise convert LF to CRLF on checkout.
+
+* text=auto eol=lf
+
+*.ts   text eol=lf
+*.tsx  text eol=lf
+*.js   text eol=lf
+*.jsx  text eol=lf
+*.json text eol=lf
+*.css  text eol=lf
+*.md   text eol=lf
+*.html text eol=lf
+*.yml  text eol=lf
+*.yaml text eol=lf
+
+# Binary files must never be line-ending converted
+*.png  binary
+*.jpg  binary
+*.jpeg binary
+*.ico  binary
+*.webp binary
+*.woff binary
+*.woff2 binary

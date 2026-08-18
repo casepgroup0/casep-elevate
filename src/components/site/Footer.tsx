@@ -85,7 +85,10 @@ export function Footer() {
             </li>
             <li className="flex items-center gap-2">
               <Phone className="h-4 w-4 text-cyan" aria-hidden="true" />
-              <a href={`tel:${company.phone.replace(/\s/g, "")}`} className="transition-colors hover:text-cyan">
+              <a
+                href={`tel:${company.phone.replace(/\s/g, "")}`}
+                className="transition-colors hover:text-cyan"
+              >
                 {company.phone}
               </a>
             </li>

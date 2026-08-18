@@ -15,10 +15,7 @@ const paths: Record<SocialIconName, string> = {
 };
 
 /** Renders a brand social icon (filled, currentColor) by name. */
-export function SocialIcon({
-  name,
-  ...props
-}: { name: SocialIconName } & SVGProps<SVGSVGElement>) {
+export function SocialIcon({ name, ...props }: { name: SocialIconName } & SVGProps<SVGSVGElement>) {
   return (
     <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" {...props}>
       <path d={paths[name]} />
