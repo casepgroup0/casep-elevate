@@ -20,6 +20,8 @@ import {
 import heroImage from "@/assets/hero-network.jpg";
 import aboutImage from "@/assets/about-collab.jpg";
 import dashboardImage from "@/assets/school-dashboard.jpg";
+import heroBg from "@/assets/bg-workspace-1.jpg";
+import productBg from "@/assets/bg-workspace-2.jpg";
 import { products } from "@/data/site";
 
 const title = "CASEP GROUP — Transforming Organizations Through Technology";
@@ -70,13 +72,15 @@ function Home() {
   return (
     <>
       {/* Hero */}
-      <section className="relative overflow-hidden bg-gradient-navy text-navy-foreground">
-        <div className="absolute inset-0 bg-grid opacity-50" aria-hidden="true" />
+      <section
+        className="bg-photo-navy relative overflow-hidden text-navy-foreground"
+        style={{ backgroundImage: `url(${heroBg})` }}
+      >
         <div
-          className="absolute -left-32 top-24 h-96 w-96 rounded-full bg-primary/25 blur-3xl animate-pulse-glow"
+          className="absolute -left-32 top-24 z-[1] h-96 w-96 rounded-full bg-primary/25 blur-3xl animate-pulse-glow"
           aria-hidden="true"
         />
-        <div className="container-page relative grid items-center gap-14 py-20 lg:grid-cols-[1.05fr_1fr] lg:py-28">
+        <div className="container-page relative z-10 grid items-center gap-14 py-20 lg:grid-cols-[1.05fr_1fr] lg:py-28">
           <Reveal>
             <p className="inline-flex rounded-full border border-navy-foreground/20 px-3.5 py-1.5 text-xs font-semibold tracking-wide text-cyan">
               Software • Cloud • Automation • Digital Transformation
@@ -116,7 +120,7 @@ function Home() {
         </div>
 
         {/* Trust strip */}
-        <div className="relative border-t border-navy-foreground/10 bg-navy-deep/40">
+        <div className="relative z-10 border-t border-navy-foreground/10 bg-navy-deep/40">
           <ul className="container-page grid gap-4 py-7 sm:grid-cols-2 lg:grid-cols-4">
             {trustStrip.map((item) => (
               <li key={item.label} className="flex items-center gap-3">
@@ -169,9 +173,11 @@ function Home() {
       <SolutionsGrid />
 
       {/* Featured product */}
-      <section className="relative overflow-hidden bg-gradient-navy py-20 text-navy-foreground md:py-28">
-        <div className="absolute inset-0 bg-grid opacity-40" aria-hidden="true" />
-        <div className="container-page relative grid items-center gap-12 lg:grid-cols-2">
+      <section
+        className="bg-photo-navy relative overflow-hidden py-20 text-navy-foreground md:py-28"
+        style={{ backgroundImage: `url(${productBg})` }}
+      >
+        <div className="container-page relative z-10 grid items-center gap-12 lg:grid-cols-2">
           <Reveal>
             <span className="inline-flex rounded-full bg-gradient-brand px-3 py-1 text-[0.7rem] font-bold uppercase tracking-wide text-primary-foreground">
               CASEP GROUP Product

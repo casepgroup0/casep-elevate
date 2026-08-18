@@ -21,7 +21,7 @@ export function Section({
       id={id}
       className={cn(
         "relative py-20 md:py-28",
-        tone === "surface" && "bg-surface",
+        tone === "surface" && "glass-surface",
         tone === "navy" && "bg-gradient-navy text-navy-foreground",
         decorated && "overflow-hidden",
         className,

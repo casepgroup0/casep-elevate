@@ -3,6 +3,7 @@ import { Mail, MapPin, Phone } from "lucide-react";
 import { company, services, socialLinks } from "@/data/site";
 import { Logo } from "./Logo";
 import { SocialIcon } from "./SocialIcon";
+import footerBg from "@/assets/bg-workspace-3.jpg";
 
 const companyLinks = [
   { label: "About", to: "/about" },
@@ -15,8 +16,11 @@ const companyLinks = [
 
 export function Footer() {
   return (
-    <footer className="bg-gradient-navy text-navy-foreground">
-      <div className="container-page grid gap-12 py-16 md:grid-cols-2 lg:grid-cols-4 lg:py-20">
+    <footer
+      className="bg-photo-navy text-navy-foreground"
+      style={{ backgroundImage: `url(${footerBg})` }}
+    >
+      <div className="relative z-10 container-page grid gap-12 py-16 md:grid-cols-2 lg:grid-cols-4 lg:py-20">
         <div>
           <div className="flex items-center gap-2.5">
             <Logo className="h-8 w-8" />
@@ -116,7 +120,7 @@ export function Footer() {
         </div>
       </div>
 
-      <div className="border-t border-navy-foreground/10">
+      <div className="relative z-10 border-t border-navy-foreground/10">
         <div className="container-page flex flex-col gap-2 py-6 text-xs text-navy-foreground/60 md:flex-row md:items-center md:justify-between">
           <p>© 2026 CASEP GROUP. All Rights Reserved.</p>
           <p>{company.tagline}</p>

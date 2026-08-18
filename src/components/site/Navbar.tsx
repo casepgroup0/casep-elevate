@@ -27,9 +27,7 @@ export function Navbar() {
     <header
       className={cn(
         "sticky top-0 z-50 w-full border-b transition-colors",
-        scrolled
-          ? "border-border bg-background/85 backdrop-blur-md"
-          : "border-transparent bg-background",
+        scrolled ? "border-border glass-panel" : "border-transparent glass-panel",
       )}
     >
       <nav className="container-page flex h-16 items-center justify-between gap-4 md:h-20">
@@ -71,7 +69,7 @@ export function Navbar() {
       </nav>
 
       {open ? (
-        <div className="border-t border-border bg-background lg:hidden">
+        <div className="border-t border-border glass-panel lg:hidden">
           <ul className="container-page flex flex-col py-3">
             {navLinks.map((link) => (
               <li key={link.to}>

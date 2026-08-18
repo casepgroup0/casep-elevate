@@ -67,7 +67,7 @@ export function ServicesGrid({ tone = "default" }: { tone?: "default" | "surface
             <Link
               to="/services/$slug"
               params={{ slug: service.slug }}
-              className="group flex h-full flex-col rounded-2xl border border-border bg-card p-7 shadow-soft transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 hover:shadow-lift"
+              className="group flex h-full flex-col rounded-2xl border border-border bg-card/75 p-7 shadow-soft backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 hover:shadow-lift"
             >
               <span className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-accent text-primary transition-colors group-hover:bg-gradient-brand group-hover:text-primary-foreground">
                 <Icon name={service.icon} className="h-6 w-6" />
@@ -99,7 +99,7 @@ export function SolutionsGrid({ tone = "default" }: { tone?: "default" | "surfac
       <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {solutions.map((solution, i) => (
           <Reveal key={solution.title} delay={i * 60} as="article">
-            <div className="flex h-full flex-col rounded-2xl border border-border bg-card p-7 shadow-soft transition-all duration-300 hover:-translate-y-1 hover:shadow-lift">
+            <div className="flex h-full flex-col rounded-2xl border border-border bg-card/75 p-7 shadow-soft backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-lift">
               <span className="inline-flex h-11 w-11 items-center justify-center rounded-lg bg-gradient-brand text-primary-foreground">
                 <Icon name={solution.icon} className="h-5 w-5" />
               </span>
@@ -111,7 +111,7 @@ export function SolutionsGrid({ tone = "default" }: { tone?: "default" | "surfac
           </Reveal>
         ))}
         <Reveal delay={solutions.length * 60}>
-          <div className="flex h-full flex-col justify-center rounded-2xl border border-primary/25 bg-accent/60 p-7">
+          <div className="flex h-full flex-col justify-center rounded-2xl border border-primary/25 bg-accent/50 p-7 backdrop-blur-xl">
             <h3 className="text-lg font-bold">Not sure where to start?</h3>
             <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
               Tell us what is slowing your organization down and we will map the options.
@@ -137,7 +137,7 @@ export function WhyGrid() {
       <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {whyCasep.map((item, i) => (
           <Reveal key={item.title} delay={i * 50}>
-            <div className="h-full rounded-2xl border border-border bg-card p-7 shadow-soft">
+            <div className="h-full rounded-2xl border border-border bg-card/75 p-7 shadow-soft backdrop-blur-xl">
               <span className="inline-flex h-11 w-11 items-center justify-center rounded-lg bg-accent text-primary">
                 <Icon name={item.icon} className="h-5 w-5" />
               </span>
@@ -163,7 +163,7 @@ export function ProcessTimeline() {
       <ol className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {processSteps.map((step, i) => (
           <Reveal key={step.number} delay={i * 60} as="li">
-            <div className="relative h-full rounded-2xl border border-border bg-card p-7 shadow-soft">
+            <div className="relative h-full rounded-2xl border border-border bg-card/75 p-7 shadow-soft backdrop-blur-xl">
               <span className="text-sm font-bold text-gradient-brand">{step.number}</span>
               <h3 className="mt-2 text-lg font-bold">{step.title}</h3>
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
@@ -188,7 +188,7 @@ export function IndustriesGrid({ tone = "surface" }: { tone?: "default" | "surfa
       <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
         {industries.map((industry, i) => (
           <Reveal key={industry.title} delay={i * 40} as="article">
-            <div className="h-full rounded-2xl border border-border bg-card p-6 shadow-soft transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 hover:shadow-lift">
+            <div className="h-full rounded-2xl border border-border bg-card/75 p-6 shadow-soft backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 hover:shadow-lift">
               <span className="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-accent text-primary">
                 <Icon name={industry.icon} className="h-5 w-5" />
               </span>
@@ -244,7 +244,7 @@ export function TechnologyStrip() {
       <div className="mt-10 flex flex-wrap gap-3">
         {technologies.map((tech, i) => (
           <Reveal key={tech} delay={i * 25}>
-            <span className="inline-flex rounded-full border border-border bg-card px-4 py-2 text-sm font-medium text-muted-foreground shadow-soft transition-colors hover:border-primary/40 hover:text-primary">
+            <span className="inline-flex rounded-full border border-border bg-card/75 px-4 py-2 text-sm font-medium text-muted-foreground shadow-soft backdrop-blur-xl transition-colors hover:border-primary/40 hover:text-primary">
               {tech}
             </span>
           </Reveal>
@@ -265,7 +265,7 @@ export function CaseStudiesGrid() {
       <div className="mt-12 grid gap-6 lg:grid-cols-3">
         {caseStudies.map((study, i) => (
           <Reveal key={study.title} delay={i * 60} as="article">
-            <div className="flex h-full flex-col rounded-2xl border border-border bg-card p-7 shadow-soft">
+            <div className="flex h-full flex-col rounded-2xl border border-border bg-card/75 p-7 shadow-soft backdrop-blur-xl">
               <div className="flex items-center justify-between gap-3">
                 <span className="text-xs font-semibold uppercase tracking-wide text-primary">
                   {study.industry}
@@ -310,7 +310,7 @@ export function TestimonialsGrid() {
       <div className="mt-12 grid gap-6 md:grid-cols-3">
         {testimonials.map((item, i) => (
           <Reveal key={item.role} delay={i * 60} as="article">
-            <figure className="flex h-full flex-col rounded-2xl border border-border bg-card p-7 shadow-soft">
+            <figure className="flex h-full flex-col rounded-2xl border border-border bg-card/75 p-7 shadow-soft backdrop-blur-xl">
               <Quote className="h-6 w-6 text-primary" aria-hidden="true" />
               <blockquote className="mt-4 flex-1 text-sm leading-relaxed text-muted-foreground">
                 {item.quote}
@@ -333,7 +333,7 @@ export function StatsBand() {
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
         {capabilityStats.map((stat, i) => (
           <Reveal key={stat.label} delay={i * 50}>
-            <div className="h-full rounded-2xl border border-border bg-card p-7 text-center shadow-soft">
+            <div className="h-full rounded-2xl border border-border bg-card/75 p-7 text-center shadow-soft backdrop-blur-xl">
               <p className="text-4xl font-extrabold text-gradient-brand">{stat.value}</p>
               <p className="mt-2 text-sm font-semibold">{stat.label}</p>
               <p className="mt-1 text-xs text-muted-foreground">{stat.note}</p>
@@ -356,7 +356,7 @@ export function InsightsGrid({ tone = "default" }: { tone?: "default" | "surface
       <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {insights.map((post, i) => (
           <Reveal key={post.slug} delay={i * 50} as="article">
-            <div className="flex h-full flex-col rounded-2xl border border-border bg-card p-7 shadow-soft transition-all duration-300 hover:-translate-y-1 hover:shadow-lift">
+            <div className="flex h-full flex-col rounded-2xl border border-border bg-card/75 p-7 shadow-soft backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-lift">
               <div className="flex items-center justify-between gap-3">
                 <span className="text-xs font-semibold uppercase tracking-wide text-primary">
                   {post.category}
