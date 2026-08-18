@@ -22,7 +22,6 @@ import aboutImage from "@/assets/about-collab.jpg";
 import dashboardImage from "@/assets/school-dashboard.jpg";
 import heroBg from "@/assets/bg-workspace-1.jpg";
 import productBg from "@/assets/bg-workspace-2.jpg";
-import fullLogo from "@/assets/casep-logo-full.png";
 import { products } from "@/data/site";
 
 const title = "CASEP GROUP — Transforming Organizations Through Technology";
@@ -83,16 +82,7 @@ function Home() {
         />
         <div className="container-page relative z-10 grid items-center gap-14 py-20 lg:grid-cols-[1.05fr_1fr] lg:py-28">
           <Reveal>
-            <div className="inline-flex items-center rounded-2xl bg-white/95 px-4 py-2.5 shadow-lift">
-              <img
-                src={fullLogo}
-                alt="CASEP GROUP"
-                width={772}
-                height={261}
-                className="h-8 w-auto md:h-9"
-              />
-            </div>
-            <p className="mt-6 inline-flex rounded-full border border-navy-foreground/20 px-3.5 py-1.5 text-xs font-semibold tracking-wide text-cyan">
+            <p className="inline-flex rounded-full border border-navy-foreground/20 px-3.5 py-1.5 text-xs font-semibold tracking-wide text-cyan">
               Software • Cloud • Automation • Digital Transformation
             </p>
             <h1 className="mt-6 text-4xl font-extrabold leading-[1.05] md:text-5xl lg:text-6xl">

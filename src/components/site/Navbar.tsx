@@ -10,10 +10,28 @@ import { Logo } from "./Logo";
 export function Navbar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [hidden, setHidden] = useState(false);
   const pathname = useRouterState({ select: (s) => s.location.pathname });
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 8);
+    let lastY = window.scrollY;
+
+    const onScroll = () => {
+      const currentY = window.scrollY;
+      setScrolled(currentY > 8);
+
+      const scrolledDown = currentY > lastY;
+      const pastThreshold = currentY > 96;
+
+      if (scrolledDown && pastThreshold) {
+        setHidden(true);
+      } else {
+        setHidden(false);
+      }
+
+      lastY = currentY;
+    };
+
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -26,8 +44,9 @@ export function Navbar() {
   return (
     <header
       className={cn(
-        "sticky top-0 z-50 w-full border-b transition-colors",
+        "sticky top-0 z-50 w-full border-b transition-all duration-300",
         scrolled ? "border-border glass-panel" : "border-transparent glass-panel",
+        hidden && !open ? "-translate-y-full" : "translate-y-0",
       )}
     >
       <nav className="container-page flex h-16 items-center justify-between gap-4 md:h-20">
