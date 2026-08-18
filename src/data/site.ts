@@ -333,8 +333,7 @@ export const whyCasep = [
   {
     icon: "Target",
     title: "Business-First Thinking",
-    description:
-      "We focus on solving organizational problems, not simply delivering technology.",
+    description: "We focus on solving organizational problems, not simply delivering technology.",
   },
   {
     icon: "Puzzle",
@@ -516,8 +515,7 @@ export const caseStudies: CaseStudy[] = [
     industry: "Education",
     challenge:
       "Schools need centralized systems to manage administration and financial operations.",
-    solution:
-      "A multi-tenant school management platform designed to centralize school operations.",
+    solution: "A multi-tenant school management platform designed to centralize school operations.",
     impact:
       "Improved visibility, reduced manual processes, and streamlined administrative workflows.",
     placeholder: true,
@@ -525,8 +523,7 @@ export const caseStudies: CaseStudy[] = [
   {
     title: "Business Operations Portal",
     industry: "Small & Medium Business",
-    challenge:
-      "Operational data spread across spreadsheets makes reporting slow and unreliable.",
+    challenge: "Operational data spread across spreadsheets makes reporting slow and unreliable.",
     solution:
       "A single operations portal covering sales records, invoicing, and management reporting.",
     impact: "Consistent records and reporting available without manual consolidation.",
@@ -571,7 +568,11 @@ export const testimonials = [
 export const capabilityStats = [
   { label: "Projects Delivered", value: "—", note: "Figure to be published" },
   { label: "Organizations Served", value: "—", note: "Figure to be published" },
-  { label: "Solution Areas", value: "6", note: "Software, web, cloud, automation, transformation, consulting" },
+  {
+    label: "Solution Areas",
+    value: "6",
+    note: "Software, web, cloud, automation, transformation, consulting",
+  },
   { label: "Products In Development", value: "1", note: "School Management System" },
 ];
 

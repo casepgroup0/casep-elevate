@@ -85,9 +85,8 @@ function Home() {
               Transforming Organizations Through Technology.
             </h1>
             <p className="mt-6 max-w-xl text-base leading-relaxed text-navy-foreground/75 md:text-lg">
-              CASEP GROUP helps schools, businesses, and organizations digitize operations,
-              automate processes, and build scalable digital solutions that drive efficiency and
-              growth.
+              CASEP GROUP helps schools, businesses, and organizations digitize operations, automate
+              processes, and build scalable digital solutions that drive efficiency and growth.
             </p>
             <div className="mt-9 flex flex-wrap gap-3">
               <Button asChild variant="brand" size="xl">
@@ -190,7 +189,10 @@ function Home() {
             </p>
             <ul className="mt-7 grid gap-2.5 sm:grid-cols-2">
               {product.features.map((feature) => (
-                <li key={feature} className="flex items-start gap-2 text-sm text-navy-foreground/80">
+                <li
+                  key={feature}
+                  className="flex items-start gap-2 text-sm text-navy-foreground/80"
+                >
                   <Check className="mt-0.5 h-4 w-4 shrink-0 text-cyan" aria-hidden="true" />
                   {feature}
                 </li>
