@@ -124,11 +124,19 @@ function Home() {
 
         {/* Trust strip */}
         <div className="relative z-10 border-t border-navy-foreground/10 bg-navy-deep/40">
-          <ul className="container-page grid gap-3 py-5 sm:grid-cols-2 sm:gap-4 sm:py-7 lg:grid-cols-4">
+          <ul className="container-page grid grid-cols-4 gap-2 py-5 sm:gap-4 sm:py-7">
             {trustStrip.map((item) => (
-              <li key={item.label} className="flex items-center gap-3">
-                <item.icon className="h-5 w-5 text-cyan" aria-hidden="true" />
-                <span className="text-sm font-medium text-navy-foreground/85">{item.label}</span>
+              <li
+                key={item.label}
+                className="flex flex-col items-center gap-1.5 text-center sm:flex-row sm:gap-3 sm:text-left"
+              >
+                <item.icon
+                  className="h-4 w-4 shrink-0 text-cyan sm:h-5 sm:w-5"
+                  aria-hidden="true"
+                />
+                <span className="text-[10px] font-medium leading-tight text-navy-foreground/85 sm:text-sm">
+                  {item.label}
+                </span>
               </li>
             ))}
           </ul>

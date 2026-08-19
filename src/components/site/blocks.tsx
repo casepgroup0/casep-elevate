@@ -1,4 +1,4 @@
-import type { ReactNode } from "react";
+import { useState, type ReactNode } from "react";
 import { Link } from "@tanstack/react-router";
 import { ArrowRight, Quote } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -61,22 +61,24 @@ export function ServicesGrid({ tone = "default" }: { tone?: "default" | "surface
         title="Technology Solutions Designed for Real-World Impact."
         description="From first idea to long-term support, we deliver the technical work that moves organizations forward."
       />
-      <div className="mt-8 grid gap-5 sm:mt-10 sm:grid-cols-2 sm:gap-6 md:mt-12 lg:grid-cols-3">
+      <div className="mt-8 grid grid-cols-3 gap-3 sm:mt-10 sm:grid-cols-2 sm:gap-6 md:mt-12 lg:grid-cols-3">
         {services.map((service, i) => (
           <Reveal key={service.slug} delay={i * 60} as="article">
             <Link
               to="/services/$slug"
               params={{ slug: service.slug }}
-              className="group flex h-full flex-col rounded-2xl border border-border bg-card/75 p-5 shadow-soft backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 hover:shadow-lift sm:p-6 lg:p-7"
+              className="group flex aspect-square flex-col items-center justify-center rounded-xl border border-border bg-card/75 p-2 text-center shadow-soft backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 hover:shadow-lift sm:aspect-auto sm:h-full sm:items-start sm:justify-start sm:rounded-2xl sm:p-6 sm:text-left lg:p-7"
             >
-              <span className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-accent text-primary transition-colors group-hover:bg-gradient-brand group-hover:text-primary-foreground">
-                <Icon name={service.icon} className="h-6 w-6" />
+              <span className="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-accent text-primary transition-colors group-hover:bg-gradient-brand group-hover:text-primary-foreground sm:h-12 sm:w-12 sm:rounded-xl">
+                <Icon name={service.icon} className="h-4 w-4 sm:h-6 sm:w-6" />
               </span>
-              <h3 className="mt-5 text-xl font-bold">{service.title}</h3>
-              <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">
+              <h3 className="mt-2 text-[11px] font-bold leading-tight sm:mt-5 sm:text-xl">
+                {service.title}
+              </h3>
+              <p className="mt-3 hidden flex-1 text-sm leading-relaxed text-muted-foreground sm:block">
                 {service.short}
               </p>
-              <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-primary">
+              <span className="mt-6 hidden items-center gap-2 text-sm font-semibold text-primary sm:inline-flex">
                 Learn More
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
               </span>
@@ -89,6 +91,9 @@ export function ServicesGrid({ tone = "default" }: { tone?: "default" | "surface
 }
 
 export function SolutionsGrid({ tone = "default" }: { tone?: "default" | "surface" }) {
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  const active = activeIndex !== null ? solutions[activeIndex] : null;
+
   return (
     <Section tone={tone} id="solutions" decorated>
       <SectionHeading
@@ -96,22 +101,35 @@ export function SolutionsGrid({ tone = "default" }: { tone?: "default" | "surfac
         title="Solutions That Solve Business Problems."
         description="We organize our work around the operational problems organizations face, not around technology labels."
       />
-      <div className="mt-8 grid gap-5 sm:mt-10 sm:grid-cols-2 sm:gap-6 md:mt-12 lg:grid-cols-3">
-        {solutions.map((solution, i) => (
-          <Reveal key={solution.title} delay={i * 60} as="article">
-            <div className="flex h-full flex-col rounded-2xl border border-border bg-card/75 p-5 shadow-soft backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-lift sm:p-6 lg:p-7">
-              <span className="inline-flex h-11 w-11 items-center justify-center rounded-lg bg-gradient-brand text-primary-foreground">
-                <Icon name={solution.icon} className="h-5 w-5" />
-              </span>
-              <h3 className="mt-5 text-lg font-bold">{solution.title}</h3>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                {solution.description}
-              </p>
-            </div>
-          </Reveal>
-        ))}
+      <div className="mt-8 grid grid-cols-3 gap-3 sm:mt-10 sm:grid-cols-2 sm:gap-6 md:mt-12 lg:grid-cols-3">
+        {solutions.map((solution, i) => {
+          const isActive = activeIndex === i;
+          return (
+            <Reveal key={solution.title} delay={i * 60} as="article">
+              <button
+                type="button"
+                onClick={() => setActiveIndex(isActive ? null : i)}
+                aria-expanded={isActive}
+                className={cn(
+                  "flex aspect-square w-full flex-col items-center justify-center rounded-xl border p-2 text-center shadow-soft backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-lift sm:aspect-auto sm:h-full sm:items-start sm:justify-start sm:rounded-2xl sm:p-6 sm:text-left lg:p-7",
+                  isActive ? "border-primary bg-accent/60" : "border-border bg-card/75",
+                )}
+              >
+                <span className="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-brand text-primary-foreground sm:h-11 sm:w-11">
+                  <Icon name={solution.icon} className="h-4 w-4 sm:h-5 sm:w-5" />
+                </span>
+                <h3 className="mt-2 text-[11px] font-bold leading-tight sm:mt-5 sm:text-lg">
+                  {solution.title}
+                </h3>
+                <p className="mt-3 hidden text-sm leading-relaxed text-muted-foreground sm:block">
+                  {solution.description}
+                </p>
+              </button>
+            </Reveal>
+          );
+        })}
         <Reveal delay={solutions.length * 60}>
-          <div className="flex h-full flex-col justify-center rounded-2xl border border-primary/25 bg-accent/50 p-5 backdrop-blur-xl sm:p-6 lg:p-7">
+          <div className="col-span-3 flex h-full flex-col justify-center rounded-2xl border border-primary/25 bg-accent/50 p-5 backdrop-blur-xl sm:col-span-1 sm:p-6 lg:p-7">
             <h3 className="text-lg font-bold">Not sure where to start?</h3>
             <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
               Tell us what is slowing your organization down and we will map the options.
@@ -122,6 +140,27 @@ export function SolutionsGrid({ tone = "default" }: { tone?: "default" | "surfac
           </div>
         </Reveal>
       </div>
+
+      {/* Mobile-only expanded detail panel for the tapped solution */}
+      {active ? (
+        <div className="mt-4 rounded-2xl border border-primary/30 bg-card/90 p-5 shadow-soft backdrop-blur-xl sm:hidden">
+          <div className="flex items-start justify-between gap-3">
+            <span className="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-brand text-primary-foreground">
+              <Icon name={active.icon} className="h-5 w-5" />
+            </span>
+            <button
+              type="button"
+              onClick={() => setActiveIndex(null)}
+              aria-label="Close details"
+              className="text-sm text-muted-foreground"
+            >
+              ✕
+            </button>
+          </div>
+          <h3 className="mt-3 text-base font-bold">{active.title}</h3>
+          <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{active.description}</p>
+        </div>
+      ) : null}
     </Section>
   );
 }
