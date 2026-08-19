@@ -17,7 +17,6 @@ import {
   TestimonialsGrid,
   WhyGrid,
 } from "@/components/site/blocks";
-import heroImage from "@/assets/hero-network.jpg";
 import aboutImage from "@/assets/about-collab.jpg";
 import dashboardImage from "@/assets/school-dashboard.jpg";
 import productBg from "@/assets/bg-workspace-2.jpg";
@@ -100,11 +99,8 @@ function Home() {
           className="absolute -left-32 top-24 z-[1] h-96 w-96 rounded-full bg-primary/25 blur-3xl animate-pulse-glow"
           aria-hidden="true"
         />
-        <div className="container-page relative z-10 grid items-center gap-14 py-20 lg:grid-cols-[1.05fr_1fr] lg:py-28">
-          <Reveal>
-            <p className="inline-flex rounded-full border border-navy-foreground/20 px-3.5 py-1.5 text-xs font-semibold tracking-wide text-cyan">
-              Software • Cloud • Automation • Digital Transformation
-            </p>
+        <div className="container-page relative z-10 py-20 lg:py-28">
+          <Reveal className="max-w-3xl">
             <h1 className="mt-6 text-4xl font-extrabold leading-[1.05] md:text-5xl lg:text-6xl">
               Transforming Organizations Through Technology.
             </h1>
@@ -123,19 +119,6 @@ function Home() {
             <p className="mt-8 text-sm text-navy-foreground/60">
               Proudly Ghanaian. Built for a connected world.
             </p>
-          </Reveal>
-
-          <Reveal delay={120} className="relative">
-            <div className="relative overflow-hidden rounded-3xl border border-navy-foreground/15 shadow-lift animate-float-slow">
-              <img
-                src={heroImage}
-                alt="Abstract visualization of connected cloud systems, analytics dashboards, and automated business operations"
-                width={1600}
-                height={1200}
-                fetchPriority="high"
-                className="h-full w-full object-cover"
-              />
-            </div>
           </Reveal>
         </div>
 
