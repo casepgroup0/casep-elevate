@@ -26,9 +26,6 @@ export function Footer() {
             <Logo className="h-8 w-8" />
             <span className="text-lg font-extrabold tracking-tight">CASEP GROUP</span>
           </div>
-          <p className="mt-3 text-xs text-navy-foreground/60 sm:mt-4 sm:text-sm">
-            Proudly Ghanaian. Built for a connected world.
-          </p>
         </div>
 
         <div className="grid grid-cols-2 gap-6 sm:gap-8">
@@ -80,11 +77,6 @@ export function Footer() {
                 Contact
               </h4>
               <ul className="mt-4 space-y-2.5 text-sm text-navy-foreground/70">
-                <li>
-                  <Link to="/contact" className="transition-colors hover:text-cyan">
-                    Contact
-                  </Link>
-                </li>
                 <li className="flex items-center gap-2">
                   <Mail className="h-4 w-4 shrink-0 text-cyan" aria-hidden="true" />
                   <a
