@@ -72,7 +72,7 @@ export function ServicesGrid({ tone = "default" }: { tone?: "default" | "surface
               <span className="inline-flex h-6 w-6 items-center justify-center rounded-md bg-accent text-primary transition-colors group-hover:bg-gradient-brand group-hover:text-primary-foreground sm:h-12 sm:w-12 sm:rounded-xl">
                 <Icon name={service.icon} className="h-3.5 w-3.5 sm:h-6 sm:w-6" />
               </span>
-              <h3 className="sr-only sm:not-sr-only sm:mt-5 sm:text-xl sm:font-bold sm:leading-tight">
+              <h3 className="mt-1 text-center text-[5px] font-bold uppercase leading-[1.15] tracking-tight sm:mt-5 sm:text-xl sm:font-bold sm:normal-case sm:leading-tight sm:tracking-normal">
                 {service.title}
               </h3>
               <p className="mt-3 hidden flex-1 text-sm leading-relaxed text-muted-foreground sm:block">
@@ -119,7 +119,7 @@ export function SolutionsGrid({ tone = "default" }: { tone?: "default" | "surfac
                 <span className="inline-flex h-6 w-6 items-center justify-center rounded-md bg-gradient-brand text-primary-foreground sm:h-11 sm:w-11 sm:rounded-lg">
                   <Icon name={solution.icon} className="h-3.5 w-3.5 sm:h-5 sm:w-5" />
                 </span>
-                <h3 className="sr-only sm:not-sr-only sm:mt-5 sm:text-lg sm:font-bold sm:leading-tight">
+                <h3 className="mt-1 text-center text-[5px] font-bold uppercase leading-[1.15] tracking-tight sm:mt-5 sm:text-lg sm:font-bold sm:normal-case sm:leading-tight sm:tracking-normal">
                   {solution.title}
                 </h3>
                 <p className="mt-3 hidden text-sm leading-relaxed text-muted-foreground sm:block">
@@ -132,10 +132,14 @@ export function SolutionsGrid({ tone = "default" }: { tone?: "default" | "surfac
         <Reveal delay={solutions.length * 60} className="col-span-5 sm:col-span-1">
           <Link
             to="/contact"
-            className="flex h-[35px] w-full items-center justify-between rounded-lg border border-primary/30 bg-accent/60 px-3 text-[11px] font-semibold text-foreground sm:hidden"
+            className="flex h-[60px] w-full items-center justify-between gap-2 rounded-lg border border-primary/30 bg-accent/60 px-3 sm:hidden"
           >
-            Not sure where to start?
-            <ArrowRight className="h-3 w-3 shrink-0" aria-hidden="true" />
+            <span className="text-[11px] font-semibold leading-tight text-foreground">
+              Not sure where to start?
+            </span>
+            <span className="inline-flex max-w-[130px] shrink-0 items-center justify-center rounded-xl bg-gradient-brand px-2.5 py-1.5 text-center text-[8px] font-bold uppercase leading-tight tracking-wide text-primary-foreground">
+              Discuss Your Requirements With Us
+            </span>
           </Link>
           <div className="hidden h-full flex-col justify-center rounded-2xl border border-primary/25 bg-accent/50 p-5 backdrop-blur-xl sm:flex sm:p-6 lg:p-7">
             <h3 className="text-lg font-bold">Not sure where to start?</h3>
