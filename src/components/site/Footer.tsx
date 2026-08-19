@@ -20,7 +20,7 @@ export function Footer() {
       className="bg-photo-navy text-navy-foreground"
       style={{ backgroundImage: `url(${footerBg})` }}
     >
-      <div className="relative z-10 container-page grid gap-12 py-16 md:grid-cols-2 lg:grid-cols-4 lg:py-20">
+      <div className="relative z-10 container-page grid gap-8 py-12 sm:gap-10 sm:py-14 md:grid-cols-2 md:gap-12 md:py-16 lg:grid-cols-4 lg:py-20">
         <div>
           <div className="flex items-center gap-2.5">
             <Logo className="h-8 w-8" />
@@ -110,7 +110,7 @@ export function Footer() {
                   rel="noopener noreferrer"
                   aria-label={social.label}
                   title={social.label}
-                  className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-navy-foreground/20 text-navy-foreground/80 transition-colors hover:border-cyan hover:text-cyan"
+                  className="inline-flex h-11 w-11 items-center justify-center rounded-md border border-navy-foreground/20 text-navy-foreground/80 transition-colors hover:border-cyan hover:text-cyan sm:h-9 sm:w-9"
                 >
                   <SocialIcon name={social.icon} className="h-4 w-4" />
                 </a>

@@ -20,7 +20,7 @@ export function Section({
     <section
       id={id}
       className={cn(
-        "relative py-20 md:py-28",
+        "relative py-14 sm:py-16 md:py-20 lg:py-28",
         tone === "surface" && "glass-surface",
         tone === "navy" && "bg-gradient-navy text-navy-foreground",
         decorated && "overflow-hidden",
@@ -70,11 +70,13 @@ export function SectionHeading({
           {eyebrow}
         </p>
       ) : null}
-      <h2 className="text-3xl font-bold leading-tight md:text-4xl lg:text-[2.75rem]">{title}</h2>
+      <h2 className="text-2xl font-bold leading-tight sm:text-3xl md:text-4xl lg:text-[2.75rem]">
+        {title}
+      </h2>
       {description ? (
         <p
           className={cn(
-            "mt-4 text-base leading-relaxed md:text-lg",
+            "mt-3 text-sm leading-relaxed sm:mt-4 sm:text-base md:text-lg",
             onDark ? "text-navy-foreground/75" : "text-muted-foreground",
           )}
         >

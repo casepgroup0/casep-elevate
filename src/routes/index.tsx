@@ -99,16 +99,16 @@ function Home() {
           className="absolute -left-32 top-24 z-[1] h-96 w-96 rounded-full bg-primary/25 blur-3xl animate-pulse-glow"
           aria-hidden="true"
         />
-        <div className="container-page relative z-10 py-20 lg:py-28">
+        <div className="container-page relative z-10 py-14 sm:py-16 md:py-20 lg:py-28">
           <Reveal className="max-w-3xl">
-            <h1 className="mt-6 text-4xl font-extrabold leading-[1.05] md:text-5xl lg:text-6xl">
+            <h1 className="mt-4 text-3xl font-extrabold leading-[1.1] sm:mt-6 sm:text-4xl sm:leading-[1.05] md:text-5xl lg:text-6xl">
               Transforming Organizations Through Technology.
             </h1>
-            <p className="mt-6 max-w-xl text-base leading-relaxed text-navy-foreground/75 md:text-lg">
+            <p className="mt-4 max-w-xl text-sm leading-relaxed text-navy-foreground/75 sm:mt-6 sm:text-base md:text-lg">
               CASEP GROUP helps schools, businesses, and organizations digitize operations, automate
               processes, and build scalable digital solutions that drive efficiency and growth.
             </p>
-            <div className="mt-9 flex flex-wrap gap-3">
+            <div className="mt-6 flex flex-wrap gap-3 sm:mt-9">
               <Button asChild variant="brand" size="xl">
                 <Link to="/contact">Let&apos;s Work Together</Link>
               </Button>
@@ -116,7 +116,7 @@ function Home() {
                 <Link to="/solutions">Explore Our Solutions</Link>
               </Button>
             </div>
-            <p className="mt-8 text-sm text-navy-foreground/60">
+            <p className="mt-6 text-sm text-navy-foreground/60 sm:mt-8">
               Proudly Ghanaian. Built for a connected world.
             </p>
           </Reveal>
@@ -124,7 +124,7 @@ function Home() {
 
         {/* Trust strip */}
         <div className="relative z-10 border-t border-navy-foreground/10 bg-navy-deep/40">
-          <ul className="container-page grid gap-4 py-7 sm:grid-cols-2 lg:grid-cols-4">
+          <ul className="container-page grid gap-3 py-5 sm:grid-cols-2 sm:gap-4 sm:py-7 lg:grid-cols-4">
             {trustStrip.map((item) => (
               <li key={item.label} className="flex items-center gap-3">
                 <item.icon className="h-5 w-5 text-cyan" aria-hidden="true" />
@@ -137,7 +137,7 @@ function Home() {
 
       {/* About preview */}
       <Section decorated>
-        <div className="grid items-center gap-12 lg:grid-cols-2">
+        <div className="grid items-center gap-8 md:grid-cols-2 md:gap-10 lg:gap-12">
           <Reveal>
             <p className="text-sm font-semibold tracking-wide text-primary">About CASEP GROUP</p>
             <h2 className="mt-3 text-3xl font-bold leading-tight md:text-4xl">
@@ -177,26 +177,26 @@ function Home() {
 
       {/* Featured product */}
       <section
-        className="bg-photo-navy relative overflow-hidden py-20 text-navy-foreground md:py-28"
+        className="bg-photo-navy relative overflow-hidden py-14 text-navy-foreground sm:py-16 md:py-20 lg:py-28"
         style={{ backgroundImage: `url(${productBg})` }}
       >
-        <div className="container-page relative z-10 grid items-center gap-12 lg:grid-cols-2">
+        <div className="container-page relative z-10 grid items-center gap-8 md:grid-cols-2 md:gap-10 lg:gap-12">
           <Reveal>
             <span className="inline-flex rounded-full bg-gradient-brand px-3 py-1 text-[0.7rem] font-bold uppercase tracking-wide text-primary-foreground">
               CASEP GROUP Product
             </span>
-            <h2 className="mt-5 text-3xl font-bold leading-tight md:text-4xl lg:text-[2.75rem]">
+            <h2 className="mt-4 text-2xl font-bold leading-tight sm:mt-5 sm:text-3xl md:text-4xl lg:text-[2.75rem]">
               School Management, Reimagined.
             </h2>
-            <p className="mt-3 text-lg font-medium text-cyan">
+            <p className="mt-3 text-base font-medium text-cyan sm:text-lg">
               A smarter way to manage modern schools.
             </p>
-            <p className="mt-5 text-base leading-relaxed text-navy-foreground/75">
+            <p className="mt-4 text-sm leading-relaxed text-navy-foreground/75 sm:mt-5 sm:text-base">
               CASEP GROUP is developing a comprehensive school management platform that brings
               academic administration, fees, communication, and reporting into one centralized
               system.
             </p>
-            <ul className="mt-7 grid gap-2.5 sm:grid-cols-2">
+            <ul className="mt-6 grid gap-2.5 sm:mt-7 sm:grid-cols-2">
               {product.features.map((feature) => (
                 <li
                   key={feature}
@@ -207,7 +207,7 @@ function Home() {
                 </li>
               ))}
             </ul>
-            <div className="mt-9 flex flex-wrap gap-3">
+            <div className="mt-6 flex flex-wrap gap-3 sm:mt-9">
               <Button asChild variant="brand" size="xl">
                 <Link to="/products">Explore School Management</Link>
               </Button>

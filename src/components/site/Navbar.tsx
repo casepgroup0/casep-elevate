@@ -49,7 +49,7 @@ export function Navbar() {
         hidden && !open ? "-translate-y-full" : "translate-y-0",
       )}
     >
-      <nav className="container-page flex h-16 items-center justify-between gap-4 md:h-20">
+      <nav className="container-page flex h-16 items-center justify-between gap-2 sm:gap-4 md:h-20">
         <Link to="/" className="flex items-center gap-2.5" aria-label="CASEP GROUP home">
           <Logo className="h-8 w-8" />
           <span className="text-base font-extrabold tracking-tight md:text-lg">CASEP GROUP</span>
@@ -77,7 +77,7 @@ export function Navbar() {
           </Button>
           <button
             type="button"
-            className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-border lg:hidden"
+            className="inline-flex h-11 w-11 items-center justify-center rounded-md border border-border lg:hidden"
             aria-label={open ? "Close menu" : "Open menu"}
             aria-expanded={open}
             onClick={() => setOpen((v) => !v)}

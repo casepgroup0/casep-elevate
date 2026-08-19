@@ -37,16 +37,16 @@ export function PageHero({
         className="absolute -right-32 top-0 h-96 w-96 rounded-full bg-cyan/20 blur-3xl animate-pulse-glow"
         aria-hidden="true"
       />
-      <div className="container-page relative py-20 md:py-28">
+      <div className="container-page relative py-14 sm:py-16 md:py-20 lg:py-28">
         <Reveal className="max-w-3xl">
           <p className="text-sm font-semibold tracking-wide text-cyan">{eyebrow}</p>
-          <h1 className="mt-4 text-4xl font-extrabold leading-[1.08] md:text-5xl lg:text-6xl">
+          <h1 className="mt-4 text-3xl font-extrabold leading-[1.1] sm:text-4xl sm:leading-[1.08] md:text-5xl lg:text-6xl">
             {title}
           </h1>
-          <p className="mt-5 max-w-2xl text-base leading-relaxed text-navy-foreground/75 md:text-lg">
+          <p className="mt-4 max-w-2xl text-sm leading-relaxed text-navy-foreground/75 sm:mt-5 sm:text-base md:text-lg">
             {description}
           </p>
-          {children ? <div className="mt-8 flex flex-wrap gap-3">{children}</div> : null}
+          {children ? <div className="mt-6 flex flex-wrap gap-3 sm:mt-8">{children}</div> : null}
         </Reveal>
       </div>
     </section>
@@ -61,13 +61,13 @@ export function ServicesGrid({ tone = "default" }: { tone?: "default" | "surface
         title="Technology Solutions Designed for Real-World Impact."
         description="From first idea to long-term support, we deliver the technical work that moves organizations forward."
       />
-      <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="mt-8 grid gap-5 sm:mt-10 sm:grid-cols-2 sm:gap-6 md:mt-12 lg:grid-cols-3">
         {services.map((service, i) => (
           <Reveal key={service.slug} delay={i * 60} as="article">
             <Link
               to="/services/$slug"
               params={{ slug: service.slug }}
-              className="group flex h-full flex-col rounded-2xl border border-border bg-card/75 p-7 shadow-soft backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 hover:shadow-lift"
+              className="group flex h-full flex-col rounded-2xl border border-border bg-card/75 p-5 shadow-soft backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 hover:shadow-lift sm:p-6 lg:p-7"
             >
               <span className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-accent text-primary transition-colors group-hover:bg-gradient-brand group-hover:text-primary-foreground">
                 <Icon name={service.icon} className="h-6 w-6" />
@@ -96,10 +96,10 @@ export function SolutionsGrid({ tone = "default" }: { tone?: "default" | "surfac
         title="Solutions That Solve Business Problems."
         description="We organize our work around the operational problems organizations face, not around technology labels."
       />
-      <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      <div className="mt-8 grid gap-5 sm:mt-10 sm:grid-cols-2 sm:gap-6 md:mt-12 lg:grid-cols-3">
         {solutions.map((solution, i) => (
           <Reveal key={solution.title} delay={i * 60} as="article">
-            <div className="flex h-full flex-col rounded-2xl border border-border bg-card/75 p-7 shadow-soft backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-lift">
+            <div className="flex h-full flex-col rounded-2xl border border-border bg-card/75 p-5 shadow-soft backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-lift sm:p-6 lg:p-7">
               <span className="inline-flex h-11 w-11 items-center justify-center rounded-lg bg-gradient-brand text-primary-foreground">
                 <Icon name={solution.icon} className="h-5 w-5" />
               </span>
@@ -111,7 +111,7 @@ export function SolutionsGrid({ tone = "default" }: { tone?: "default" | "surfac
           </Reveal>
         ))}
         <Reveal delay={solutions.length * 60}>
-          <div className="flex h-full flex-col justify-center rounded-2xl border border-primary/25 bg-accent/50 p-7 backdrop-blur-xl">
+          <div className="flex h-full flex-col justify-center rounded-2xl border border-primary/25 bg-accent/50 p-5 backdrop-blur-xl sm:p-6 lg:p-7">
             <h3 className="text-lg font-bold">Not sure where to start?</h3>
             <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
               Tell us what is slowing your organization down and we will map the options.
@@ -134,10 +134,10 @@ export function WhyGrid() {
         title="Why Organizations Choose CASEP GROUP"
         description="A technology partner that understands operations as well as engineering."
       />
-      <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="mt-8 grid gap-5 sm:mt-10 sm:grid-cols-2 sm:gap-6 md:mt-12 lg:grid-cols-3">
         {whyCasep.map((item, i) => (
           <Reveal key={item.title} delay={i * 50}>
-            <div className="h-full rounded-2xl border border-border bg-card/75 p-7 shadow-soft backdrop-blur-xl">
+            <div className="h-full rounded-2xl border border-border bg-card/75 p-5 shadow-soft backdrop-blur-xl sm:p-6 lg:p-7">
               <span className="inline-flex h-11 w-11 items-center justify-center rounded-lg bg-accent text-primary">
                 <Icon name={item.icon} className="h-5 w-5" />
               </span>
@@ -160,10 +160,10 @@ export function ProcessTimeline() {
         eyebrow="How We Work"
         title="A Clear Process From First Conversation to Long-Term Support."
       />
-      <ol className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      <ol className="mt-8 grid gap-5 sm:mt-10 sm:grid-cols-2 sm:gap-6 md:mt-12 lg:grid-cols-3">
         {processSteps.map((step, i) => (
           <Reveal key={step.number} delay={i * 60} as="li">
-            <div className="relative h-full rounded-2xl border border-border bg-card/75 p-7 shadow-soft backdrop-blur-xl">
+            <div className="relative h-full rounded-2xl border border-border bg-card/75 p-5 shadow-soft backdrop-blur-xl sm:p-6 lg:p-7">
               <span className="text-sm font-bold text-gradient-brand">{step.number}</span>
               <h3 className="mt-2 text-lg font-bold">{step.title}</h3>
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
@@ -185,10 +185,10 @@ export function IndustriesGrid({ tone = "surface" }: { tone?: "default" | "surfa
         title="Technology for Different Industries."
         description="Every sector runs on different processes. We adapt the solution to the sector, not the other way round."
       />
-      <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="mt-8 grid gap-5 sm:mt-10 sm:grid-cols-2 sm:gap-6 md:mt-12 md:grid-cols-3 lg:grid-cols-4">
         {industries.map((industry, i) => (
           <Reveal key={industry.title} delay={i * 40} as="article">
-            <div className="h-full rounded-2xl border border-border bg-card/75 p-6 shadow-soft backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 hover:shadow-lift">
+            <div className="h-full rounded-2xl border border-border bg-card/75 p-5 shadow-soft backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 hover:shadow-lift sm:p-6">
               <span className="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-accent text-primary">
                 <Icon name={industry.icon} className="h-5 w-5" />
               </span>
@@ -206,7 +206,7 @@ export function IndustriesGrid({ tone = "surface" }: { tone?: "default" | "surfa
 
 export function DifferentiatorBand() {
   return (
-    <section className="relative overflow-hidden bg-gradient-navy py-20 text-navy-foreground md:py-28">
+    <section className="relative overflow-hidden bg-gradient-navy py-14 text-navy-foreground sm:py-16 md:py-20 lg:py-28">
       <div className="absolute inset-0 bg-grid opacity-50" aria-hidden="true" />
       <div
         className="absolute -left-24 top-10 h-80 w-80 rounded-full bg-primary/25 blur-3xl animate-pulse-glow"
@@ -219,10 +219,10 @@ export function DifferentiatorBand() {
       <div className="container-page relative">
         <Reveal className="max-w-3xl">
           <p className="text-sm font-semibold tracking-wide text-cyan">The difference</p>
-          <h2 className="mt-4 text-3xl font-bold leading-tight md:text-4xl lg:text-[2.75rem]">
+          <h2 className="mt-4 text-2xl font-bold leading-tight sm:text-3xl md:text-4xl lg:text-[2.75rem]">
             We Don&apos;t Just Build Technology. We Build Better Ways of Working.
           </h2>
-          <p className="mt-5 text-base leading-relaxed text-navy-foreground/75 md:text-lg">
+          <p className="mt-4 text-sm leading-relaxed text-navy-foreground/75 sm:mt-5 sm:text-base md:text-lg">
             Technology is most valuable when it creates meaningful improvements. CASEP GROUP
             combines technical expertise with business thinking to create solutions that help
             organizations work smarter, make better decisions, and prepare for the future.
@@ -241,10 +241,10 @@ export function TechnologyStrip() {
         title="Modern Technology. Practical Results."
         description="We choose proven tools that keep systems reliable, secure, and affordable to maintain."
       />
-      <div className="mt-10 flex flex-wrap gap-3">
+      <div className="mt-8 flex flex-wrap gap-2.5 sm:mt-10 sm:gap-3">
         {technologies.map((tech, i) => (
           <Reveal key={tech} delay={i * 25}>
-            <span className="inline-flex rounded-full border border-border bg-card/75 px-4 py-2 text-sm font-medium text-muted-foreground shadow-soft backdrop-blur-xl transition-colors hover:border-primary/40 hover:text-primary">
+            <span className="inline-flex rounded-full border border-border bg-card/75 px-3.5 py-1.5 text-sm font-medium text-muted-foreground shadow-soft backdrop-blur-xl transition-colors hover:border-primary/40 hover:text-primary sm:px-4 sm:py-2">
               {tech}
             </span>
           </Reveal>
@@ -262,10 +262,10 @@ export function CaseStudiesGrid() {
         title="Work Framed Around Outcomes."
         description="Illustrative examples of the engagements we structure. Published client work will replace these entries."
       />
-      <div className="mt-12 grid gap-6 lg:grid-cols-3">
+      <div className="mt-8 grid gap-5 sm:mt-10 sm:grid-cols-2 sm:gap-6 md:mt-12 lg:grid-cols-3">
         {caseStudies.map((study, i) => (
           <Reveal key={study.title} delay={i * 60} as="article">
-            <div className="flex h-full flex-col rounded-2xl border border-border bg-card/75 p-7 shadow-soft backdrop-blur-xl">
+            <div className="flex h-full flex-col rounded-2xl border border-border bg-card/75 p-5 shadow-soft backdrop-blur-xl sm:p-6 lg:p-7">
               <div className="flex items-center justify-between gap-3">
                 <span className="text-xs font-semibold uppercase tracking-wide text-primary">
                   {study.industry}
@@ -307,10 +307,10 @@ export function TestimonialsGrid() {
         title="Client Voices, Published Once Verified."
         description="We do not publish invented endorsements. These placeholders will be replaced with attributed feedback."
       />
-      <div className="mt-12 grid gap-6 md:grid-cols-3">
+      <div className="mt-8 grid gap-5 sm:mt-10 sm:grid-cols-2 sm:gap-6 md:mt-12 lg:grid-cols-3">
         {testimonials.map((item, i) => (
           <Reveal key={item.role} delay={i * 60} as="article">
-            <figure className="flex h-full flex-col rounded-2xl border border-border bg-card/75 p-7 shadow-soft backdrop-blur-xl">
+            <figure className="flex h-full flex-col rounded-2xl border border-border bg-card/75 p-5 shadow-soft backdrop-blur-xl sm:p-6 lg:p-7">
               <Quote className="h-6 w-6 text-primary" aria-hidden="true" />
               <blockquote className="mt-4 flex-1 text-sm leading-relaxed text-muted-foreground">
                 {item.quote}
@@ -330,10 +330,10 @@ export function TestimonialsGrid() {
 export function StatsBand() {
   return (
     <Section tone="surface">
-      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="grid gap-5 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4">
         {capabilityStats.map((stat, i) => (
           <Reveal key={stat.label} delay={i * 50}>
-            <div className="h-full rounded-2xl border border-border bg-card/75 p-7 text-center shadow-soft backdrop-blur-xl">
+            <div className="h-full rounded-2xl border border-border bg-card/75 p-5 text-center shadow-soft backdrop-blur-xl sm:p-6 lg:p-7">
               <p className="text-4xl font-extrabold text-gradient-brand">{stat.value}</p>
               <p className="mt-2 text-sm font-semibold">{stat.label}</p>
               <p className="mt-1 text-xs text-muted-foreground">{stat.note}</p>
@@ -353,10 +353,10 @@ export function InsightsGrid({ tone = "default" }: { tone?: "default" | "surface
         title="Perspectives on Technology and Operations."
         description="Planned articles on the topics organizations ask us about most. These outlines are not yet published pieces."
       />
-      <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      <div className="mt-8 grid gap-5 sm:mt-10 sm:grid-cols-2 sm:gap-6 md:mt-12 lg:grid-cols-3">
         {insights.map((post, i) => (
           <Reveal key={post.slug} delay={i * 50} as="article">
-            <div className="flex h-full flex-col rounded-2xl border border-border bg-card/75 p-7 shadow-soft backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-lift">
+            <div className="flex h-full flex-col rounded-2xl border border-border bg-card/75 p-5 shadow-soft backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-lift sm:p-6 lg:p-7">
               <div className="flex items-center justify-between gap-3">
                 <span className="text-xs font-semibold uppercase tracking-wide text-primary">
                   {post.category}
@@ -389,18 +389,18 @@ export function CTASection({
   className?: string;
 }) {
   return (
-    <section className={cn("py-20 md:py-24", className)}>
+    <section className={cn("py-14 sm:py-16 md:py-20 lg:py-24", className)}>
       <div className="container-page">
         <Reveal>
-          <div className="relative overflow-hidden rounded-3xl bg-gradient-navy px-7 py-14 text-navy-foreground shadow-lift md:px-14 md:py-16">
+          <div className="relative overflow-hidden rounded-3xl bg-gradient-navy px-5 py-10 text-navy-foreground shadow-lift sm:px-7 sm:py-14 md:px-14 md:py-16">
             <div className="absolute inset-0 bg-grid opacity-40" aria-hidden="true" />
             <div
               className="absolute -right-20 -top-16 h-72 w-72 rounded-full bg-cyan/25 blur-3xl animate-pulse-glow"
               aria-hidden="true"
             />
             <div className="relative max-w-2xl">
-              <h2 className="text-3xl font-bold leading-tight md:text-4xl">{title}</h2>
-              <p className="mt-4 text-base leading-relaxed text-navy-foreground/75">
+              <h2 className="text-2xl font-bold leading-tight sm:text-3xl md:text-4xl">{title}</h2>
+              <p className="mt-3 text-sm leading-relaxed text-navy-foreground/75 sm:mt-4 sm:text-base">
                 {description}
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
