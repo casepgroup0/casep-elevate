@@ -26,8 +26,8 @@ export function Footer() {
             <Logo className="h-8 w-8" />
             <span className="text-lg font-extrabold tracking-tight">CASEP GROUP</span>
           </div>
-          <p className="mt-3 whitespace-nowrap text-xs leading-relaxed text-navy-foreground/70 sm:mt-4 sm:text-sm md:max-w-xs md:whitespace-normal">
-            {company.tagline}
+          <p className="mt-3 text-xs text-navy-foreground/60 sm:mt-4 sm:text-sm">
+            Proudly Ghanaian. Built for a connected world.
           </p>
         </div>
 
@@ -70,70 +70,78 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="grid grid-cols-2 gap-6 sm:gap-8">
-          <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wide text-navy-foreground/90">
-              Connect With Us
-            </h3>
-            <ul className="mt-4 space-y-2.5 text-sm text-navy-foreground/70">
-              <li>
-                <Link to="/contact" className="transition-colors hover:text-cyan">
-                  Contact
-                </Link>
-              </li>
-              <li className="flex items-center gap-2">
-                <Mail className="h-4 w-4 shrink-0 text-cyan" aria-hidden="true" />
-                <a
-                  href={`mailto:${company.email}`}
-                  className="break-all transition-colors hover:text-cyan"
-                >
-                  {company.email}
-                </a>
-              </li>
-              <li className="flex items-center gap-2">
-                <Phone className="h-4 w-4 shrink-0 text-cyan" aria-hidden="true" />
-                <a
-                  href={`tel:${company.phone.replace(/\s/g, "")}`}
-                  className="transition-colors hover:text-cyan"
-                >
-                  {company.phone}
-                </a>
-              </li>
-              <li className="flex items-center gap-2">
-                <MapPin className="h-4 w-4 shrink-0 text-cyan" aria-hidden="true" />
-                {company.location}
-              </li>
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wide text-navy-foreground/90">
-              Socials
-            </h3>
-            <ul className="mt-4 grid grid-cols-3 gap-2">
-              {socialLinks.map((social) => (
-                <li key={social.label}>
+        <div>
+          <h3 className="text-center text-sm font-semibold uppercase tracking-wide text-navy-foreground/90">
+            Connect With Us
+          </h3>
+          <div className="mt-4 grid grid-cols-2 gap-6 sm:gap-8">
+            <div>
+              <h4 className="text-sm font-semibold uppercase tracking-wide text-navy-foreground/90">
+                Contact
+              </h4>
+              <ul className="mt-4 space-y-2.5 text-sm text-navy-foreground/70">
+                <li>
+                  <Link to="/contact" className="transition-colors hover:text-cyan">
+                    Contact
+                  </Link>
+                </li>
+                <li className="flex items-center gap-2">
+                  <Mail className="h-4 w-4 shrink-0 text-cyan" aria-hidden="true" />
                   <a
-                    href={social.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={social.label}
-                    title={social.label}
-                    className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-navy-foreground/20 text-navy-foreground/80 transition-colors hover:border-cyan hover:text-cyan"
+                    href={`mailto:${company.email}`}
+                    className="break-all transition-colors hover:text-cyan"
                   >
-                    <SocialIcon name={social.icon} className="h-4 w-4" />
+                    {company.email}
                   </a>
                 </li>
-              ))}
-            </ul>
+                <li className="flex items-center gap-2">
+                  <Phone className="h-4 w-4 shrink-0 text-cyan" aria-hidden="true" />
+                  <a
+                    href={`tel:${company.phone.replace(/\s/g, "")}`}
+                    className="transition-colors hover:text-cyan"
+                  >
+                    {company.phone}
+                  </a>
+                </li>
+                <li className="flex items-center gap-2">
+                  <MapPin className="h-4 w-4 shrink-0 text-cyan" aria-hidden="true" />
+                  {company.location}
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 className="text-sm font-semibold uppercase tracking-wide text-navy-foreground/90">
+                Socials
+              </h4>
+              <ul className="mt-11 grid grid-cols-3 gap-2">
+                {socialLinks.map((social) => (
+                  <li key={social.label}>
+                    <a
+                      href={social.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={social.label}
+                      title={social.label}
+                      className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-navy-foreground/20 text-navy-foreground/80 transition-colors hover:border-cyan hover:text-cyan"
+                    >
+                      <SocialIcon name={social.icon} className="h-4 w-4" />
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
       </div>
 
+      <div className="relative z-10 container-page pb-3 text-center sm:pb-4 sm:text-left">
+        <p className="text-xs text-navy-foreground/60 sm:text-sm">{company.tagline}</p>
+      </div>
+
       <div className="relative z-10 border-t border-navy-foreground/10">
-        <div className="container-page flex flex-row flex-wrap items-center justify-between gap-x-3 gap-y-1 py-6 text-[9px] leading-tight text-navy-foreground/60 sm:text-xs">
+        <div className="container-page flex flex-row flex-wrap items-center justify-between gap-x-4 gap-y-1 py-6 text-xs text-navy-foreground/60">
           <p>© 2026 CASEP GROUP. All Rights Reserved.</p>
-          <p>{company.tagline}</p>
           <p className="text-navy-foreground/40">Designed &amp; developed by CASEP GROUP</p>
         </div>
       </div>
