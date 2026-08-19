@@ -20,8 +20,10 @@ import {
 import heroImage from "@/assets/hero-network.jpg";
 import aboutImage from "@/assets/about-collab.jpg";
 import dashboardImage from "@/assets/school-dashboard.jpg";
-import heroBg from "@/assets/bg-workspace-1.jpg";
 import productBg from "@/assets/bg-workspace-2.jpg";
+import heroVideoMp4 from "@/assets/hero-bg.mp4";
+import heroVideoWebm from "@/assets/hero-bg.webm";
+import heroPoster from "@/assets/hero-poster.jpg";
 import { products } from "@/data/site";
 
 const title = "CASEP GROUP — Transforming Organizations Through Technology";
@@ -72,10 +74,28 @@ function Home() {
   return (
     <>
       {/* Hero */}
-      <section
-        className="bg-photo-navy relative overflow-hidden text-navy-foreground"
-        style={{ backgroundImage: `url(${heroBg})` }}
-      >
+      <section className="relative overflow-hidden text-navy-foreground">
+        {/* Looping background video. Hidden (in favor of the static poster
+            image) when the user has requested reduced motion. */}
+        <video
+          className="absolute inset-0 hidden h-full w-full object-cover motion-safe:block"
+          autoPlay
+          muted
+          loop
+          playsInline
+          poster={heroPoster}
+          aria-hidden="true"
+        >
+          <source src={heroVideoWebm} type="video/webm" />
+          <source src={heroVideoMp4} type="video/mp4" />
+        </video>
+        <img
+          src={heroPoster}
+          alt=""
+          aria-hidden="true"
+          className="absolute inset-0 hidden h-full w-full object-cover motion-reduce:block"
+        />
+        <div className="navy-video-overlay absolute inset-0" aria-hidden="true" />
         <div
           className="absolute -left-32 top-24 z-[1] h-96 w-96 rounded-full bg-primary/25 blur-3xl animate-pulse-glow"
           aria-hidden="true"

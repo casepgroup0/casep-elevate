@@ -379,6 +379,19 @@
     );
     pointer-events: none;
   }
+
+  /* Same navy tint as .bg-photo-navy, but as a real element (not a
+     pseudo-element) so it can be layered on top of a <video> background
+     rather than a CSS background-image. */
+  .navy-video-overlay {
+    background-image: linear-gradient(
+      150deg,
+      oklch(0.196 0.043 252.5 / 0.93) 0%,
+      oklch(0.264 0.062 258.4 / 0.9) 55%,
+      oklch(0.32 0.09 250 / 0.88) 100%
+    );
+    pointer-events: none;
+  }
 }
 
 @keyframes float-slow {
