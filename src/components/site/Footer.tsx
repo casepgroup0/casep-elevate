@@ -20,108 +20,118 @@ export function Footer() {
       className="bg-photo-navy text-navy-foreground"
       style={{ backgroundImage: `url(${footerBg})` }}
     >
-      <div className="relative z-10 container-page grid gap-8 py-12 sm:gap-10 sm:py-14 md:grid-cols-2 md:gap-12 md:py-16 lg:grid-cols-4 lg:py-20">
-        <div>
+      <div className="relative z-10 container-page grid gap-8 py-12 sm:gap-10 sm:py-14 md:grid-cols-3 md:gap-10 md:py-16 lg:gap-12 lg:py-20">
+        <div className="flex flex-col items-center text-center md:items-start md:text-left">
           <div className="flex items-center gap-2.5">
             <Logo className="h-8 w-8" />
             <span className="text-lg font-extrabold tracking-tight">CASEP GROUP</span>
           </div>
-          <p className="mt-4 max-w-xs text-sm leading-relaxed text-navy-foreground/70">
+          <p className="mt-3 whitespace-nowrap text-xs leading-relaxed text-navy-foreground/70 sm:mt-4 sm:text-sm md:max-w-xs md:whitespace-normal">
             {company.tagline}
           </p>
-          <p className="mt-4 text-sm text-navy-foreground/60">
-            Proudly Ghanaian. Built for a connected world.
-          </p>
         </div>
 
-        <div>
-          <h3 className="text-sm font-semibold uppercase tracking-wide text-navy-foreground/90">
-            Company
-          </h3>
-          <ul className="mt-4 space-y-2.5">
-            {companyLinks.map((link) => (
-              <li key={link.to}>
-                <Link
-                  to={link.to}
-                  className="text-sm text-navy-foreground/70 transition-colors hover:text-cyan"
-                >
-                  {link.label}
+        <div className="grid grid-cols-2 gap-6 sm:gap-8">
+          <div>
+            <h3 className="text-sm font-semibold uppercase tracking-wide text-navy-foreground/90">
+              Company
+            </h3>
+            <ul className="mt-4 space-y-2.5">
+              {companyLinks.map((link) => (
+                <li key={link.to}>
+                  <Link
+                    to={link.to}
+                    className="text-sm text-navy-foreground/70 transition-colors hover:text-cyan"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="text-sm font-semibold uppercase tracking-wide text-navy-foreground/90">
+              Services
+            </h3>
+            <ul className="mt-4 space-y-2.5">
+              {services.map((service) => (
+                <li key={service.slug}>
+                  <Link
+                    to="/services/$slug"
+                    params={{ slug: service.slug }}
+                    className="text-sm text-navy-foreground/70 transition-colors hover:text-cyan"
+                  >
+                    {service.title}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-2 gap-6 sm:gap-8">
+          <div>
+            <h3 className="text-sm font-semibold uppercase tracking-wide text-navy-foreground/90">
+              Connect With Us
+            </h3>
+            <ul className="mt-4 space-y-2.5 text-sm text-navy-foreground/70">
+              <li>
+                <Link to="/contact" className="transition-colors hover:text-cyan">
+                  Contact
                 </Link>
               </li>
-            ))}
-          </ul>
-        </div>
-
-        <div>
-          <h3 className="text-sm font-semibold uppercase tracking-wide text-navy-foreground/90">
-            Services
-          </h3>
-          <ul className="mt-4 space-y-2.5">
-            {services.map((service) => (
-              <li key={service.slug}>
-                <Link
-                  to="/services/$slug"
-                  params={{ slug: service.slug }}
-                  className="text-sm text-navy-foreground/70 transition-colors hover:text-cyan"
-                >
-                  {service.title}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        <div>
-          <h3 className="text-sm font-semibold uppercase tracking-wide text-navy-foreground/90">
-            Connect
-          </h3>
-          <ul className="mt-4 space-y-2.5 text-sm text-navy-foreground/70">
-            <li>
-              <Link to="/contact" className="transition-colors hover:text-cyan">
-                Contact
-              </Link>
-            </li>
-            <li className="flex items-center gap-2">
-              <Mail className="h-4 w-4 text-cyan" aria-hidden="true" />
-              <a href={`mailto:${company.email}`} className="transition-colors hover:text-cyan">
-                {company.email}
-              </a>
-            </li>
-            <li className="flex items-center gap-2">
-              <Phone className="h-4 w-4 text-cyan" aria-hidden="true" />
-              <a
-                href={`tel:${company.phone.replace(/\s/g, "")}`}
-                className="transition-colors hover:text-cyan"
-              >
-                {company.phone}
-              </a>
-            </li>
-            <li className="flex items-center gap-2">
-              <MapPin className="h-4 w-4 text-cyan" aria-hidden="true" />
-              {company.location}
-            </li>
-          </ul>
-          <ul className="mt-5 flex flex-wrap gap-2">
-            {socialLinks.map((social) => (
-              <li key={social.label}>
+              <li className="flex items-center gap-2">
+                <Mail className="h-4 w-4 shrink-0 text-cyan" aria-hidden="true" />
                 <a
-                  href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={social.label}
-                  title={social.label}
-                  className="inline-flex h-11 w-11 items-center justify-center rounded-md border border-navy-foreground/20 text-navy-foreground/80 transition-colors hover:border-cyan hover:text-cyan sm:h-9 sm:w-9"
+                  href={`mailto:${company.email}`}
+                  className="break-all transition-colors hover:text-cyan"
                 >
-                  <SocialIcon name={social.icon} className="h-4 w-4" />
+                  {company.email}
                 </a>
               </li>
-            ))}
-          </ul>
+              <li className="flex items-center gap-2">
+                <Phone className="h-4 w-4 shrink-0 text-cyan" aria-hidden="true" />
+                <a
+                  href={`tel:${company.phone.replace(/\s/g, "")}`}
+                  className="transition-colors hover:text-cyan"
+                >
+                  {company.phone}
+                </a>
+              </li>
+              <li className="flex items-center gap-2">
+                <MapPin className="h-4 w-4 shrink-0 text-cyan" aria-hidden="true" />
+                {company.location}
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="text-sm font-semibold uppercase tracking-wide text-navy-foreground/90">
+              Socials
+            </h3>
+            <ul className="mt-4 grid grid-cols-3 gap-2">
+              {socialLinks.map((social) => (
+                <li key={social.label}>
+                  <a
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={social.label}
+                    title={social.label}
+                    className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-navy-foreground/20 text-navy-foreground/80 transition-colors hover:border-cyan hover:text-cyan"
+                  >
+                    <SocialIcon name={social.icon} className="h-4 w-4" />
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
 
       <div className="relative z-10 border-t border-navy-foreground/10">
-        <div className="container-page flex flex-col gap-2 py-6 text-xs text-navy-foreground/60 md:flex-row md:items-center md:justify-between">
+        <div className="container-page flex flex-row flex-wrap items-center justify-between gap-x-3 gap-y-1 py-6 text-[9px] leading-tight text-navy-foreground/60 sm:text-xs">
           <p>© 2026 CASEP GROUP. All Rights Reserved.</p>
           <p>{company.tagline}</p>
           <p className="text-navy-foreground/40">Designed &amp; developed by CASEP GROUP</p>
