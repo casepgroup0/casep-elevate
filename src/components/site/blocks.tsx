@@ -61,18 +61,18 @@ export function ServicesGrid({ tone = "default" }: { tone?: "default" | "surface
         title="Technology Solutions Designed for Real-World Impact."
         description="From first idea to long-term support, we deliver the technical work that moves organizations forward."
       />
-      <div className="mt-8 grid grid-cols-3 gap-3 sm:mt-10 sm:grid-cols-2 sm:gap-6 md:mt-12 lg:grid-cols-3">
+      <div className="mt-8 grid grid-cols-6 gap-1.5 sm:mt-10 sm:grid-cols-2 sm:gap-6 md:mt-12 lg:grid-cols-3">
         {services.map((service, i) => (
           <Reveal key={service.slug} delay={i * 60} as="article">
             <Link
               to="/services/$slug"
               params={{ slug: service.slug }}
-              className="group flex aspect-square flex-col items-center justify-center rounded-xl border border-border bg-card/75 p-2 text-center shadow-soft backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 hover:shadow-lift sm:aspect-auto sm:h-full sm:items-start sm:justify-start sm:rounded-2xl sm:p-6 sm:text-left lg:p-7"
+              className="group flex aspect-square flex-col items-center justify-center rounded-lg border border-border bg-card/75 p-1 text-center shadow-soft backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 hover:shadow-lift sm:aspect-auto sm:h-full sm:items-start sm:justify-start sm:rounded-2xl sm:p-6 sm:text-left lg:p-7"
             >
-              <span className="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-accent text-primary transition-colors group-hover:bg-gradient-brand group-hover:text-primary-foreground sm:h-12 sm:w-12 sm:rounded-xl">
-                <Icon name={service.icon} className="h-4 w-4 sm:h-6 sm:w-6" />
+              <span className="inline-flex h-6 w-6 items-center justify-center rounded-md bg-accent text-primary transition-colors group-hover:bg-gradient-brand group-hover:text-primary-foreground sm:h-12 sm:w-12 sm:rounded-xl">
+                <Icon name={service.icon} className="h-3.5 w-3.5 sm:h-6 sm:w-6" />
               </span>
-              <h3 className="mt-2 text-[11px] font-bold leading-tight sm:mt-5 sm:text-xl">
+              <h3 className="sr-only sm:not-sr-only sm:mt-5 sm:text-xl sm:font-bold sm:leading-tight">
                 {service.title}
               </h3>
               <p className="mt-3 hidden flex-1 text-sm leading-relaxed text-muted-foreground sm:block">
@@ -101,7 +101,7 @@ export function SolutionsGrid({ tone = "default" }: { tone?: "default" | "surfac
         title="Solutions That Solve Business Problems."
         description="We organize our work around the operational problems organizations face, not around technology labels."
       />
-      <div className="mt-8 grid grid-cols-3 gap-3 sm:mt-10 sm:grid-cols-2 sm:gap-6 md:mt-12 lg:grid-cols-3">
+      <div className="mt-8 grid grid-cols-5 gap-1.5 sm:mt-10 sm:grid-cols-2 sm:gap-6 md:mt-12 lg:grid-cols-3">
         {solutions.map((solution, i) => {
           const isActive = activeIndex === i;
           return (
@@ -110,15 +110,16 @@ export function SolutionsGrid({ tone = "default" }: { tone?: "default" | "surfac
                 type="button"
                 onClick={() => setActiveIndex(isActive ? null : i)}
                 aria-expanded={isActive}
+                aria-label={solution.title}
                 className={cn(
-                  "flex aspect-square w-full flex-col items-center justify-center rounded-xl border p-2 text-center shadow-soft backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-lift sm:aspect-auto sm:h-full sm:items-start sm:justify-start sm:rounded-2xl sm:p-6 sm:text-left lg:p-7",
+                  "flex aspect-square w-full flex-col items-center justify-center rounded-lg border p-1 text-center shadow-soft backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-lift sm:aspect-auto sm:h-full sm:items-start sm:justify-start sm:rounded-2xl sm:p-6 sm:text-left lg:p-7",
                   isActive ? "border-primary bg-accent/60" : "border-border bg-card/75",
                 )}
               >
-                <span className="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-brand text-primary-foreground sm:h-11 sm:w-11">
-                  <Icon name={solution.icon} className="h-4 w-4 sm:h-5 sm:w-5" />
+                <span className="inline-flex h-6 w-6 items-center justify-center rounded-md bg-gradient-brand text-primary-foreground sm:h-11 sm:w-11 sm:rounded-lg">
+                  <Icon name={solution.icon} className="h-3.5 w-3.5 sm:h-5 sm:w-5" />
                 </span>
-                <h3 className="mt-2 text-[11px] font-bold leading-tight sm:mt-5 sm:text-lg">
+                <h3 className="sr-only sm:not-sr-only sm:mt-5 sm:text-lg sm:font-bold sm:leading-tight">
                   {solution.title}
                 </h3>
                 <p className="mt-3 hidden text-sm leading-relaxed text-muted-foreground sm:block">
@@ -128,8 +129,15 @@ export function SolutionsGrid({ tone = "default" }: { tone?: "default" | "surfac
             </Reveal>
           );
         })}
-        <Reveal delay={solutions.length * 60}>
-          <div className="col-span-3 flex h-full flex-col justify-center rounded-2xl border border-primary/25 bg-accent/50 p-5 backdrop-blur-xl sm:col-span-1 sm:p-6 lg:p-7">
+        <Reveal delay={solutions.length * 60} className="col-span-5 sm:col-span-1">
+          <Link
+            to="/contact"
+            className="flex h-[35px] w-full items-center justify-between rounded-lg border border-primary/30 bg-accent/60 px-3 text-[11px] font-semibold text-foreground sm:hidden"
+          >
+            Not sure where to start?
+            <ArrowRight className="h-3 w-3 shrink-0" aria-hidden="true" />
+          </Link>
+          <div className="hidden h-full flex-col justify-center rounded-2xl border border-primary/25 bg-accent/50 p-5 backdrop-blur-xl sm:flex sm:p-6 lg:p-7">
             <h3 className="text-lg font-bold">Not sure where to start?</h3>
             <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
               Tell us what is slowing your organization down and we will map the options.
