@@ -28,7 +28,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="flex flex-row justify-between gap-6 px-3 sm:gap-8 sm:px-0">
+        <div className="grid grid-cols-2 gap-6 sm:gap-8">
           <div>
             <h3 className="text-sm font-semibold uppercase tracking-wide text-navy-foreground/90">
               Company
@@ -71,7 +71,7 @@ export function Footer() {
           <h3 className="text-center text-sm font-semibold uppercase tracking-wide text-navy-foreground/90">
             Connect With Us
           </h3>
-          <div className="mt-4 flex flex-row justify-between gap-6 px-3 sm:gap-8 sm:px-0">
+          <div className="mt-4 grid grid-cols-2 gap-6 sm:gap-8">
             <div>
               <h4 className="text-sm font-semibold uppercase tracking-wide text-navy-foreground/90">
                 Contact
@@ -106,7 +106,7 @@ export function Footer() {
               <h4 className="text-sm font-semibold uppercase tracking-wide text-navy-foreground/90">
                 Socials
               </h4>
-              <ul className="mt-4 grid grid-cols-2 gap-2">
+              <ul className="mt-4 grid w-fit grid-cols-3 gap-2">
                 {socialLinks.map((social) => (
                   <li key={social.label}>
                     <a
