@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Cloud, Code2, Rocket, Workflow, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Reveal } from "@/components/site/Reveal";
+import { ProductSlideshow } from "@/components/site/ProductSlideshow";
 import { Section, SectionHeading } from "@/components/site/Section";
 import {
   CTASection,
@@ -18,7 +19,8 @@ import {
   WhyGrid,
 } from "@/components/site/blocks";
 import aboutImage from "@/assets/about-collab.jpg";
-import dashboardImage from "@/assets/school-dashboard.jpg";
+import dashboardLight from "@/assets/dashboard-light.png";
+import dashboardDark from "@/assets/dashboard-dark.png";
 import productBg from "@/assets/bg-workspace-2.jpg";
 import heroVideoMp4 from "@/assets/hero-bg.mp4";
 import heroVideoWebm from "@/assets/hero-bg.webm";
@@ -225,13 +227,19 @@ function Home() {
             </div>
           </Reveal>
           <Reveal delay={120}>
-            <img
-              src={dashboardImage}
-              alt="School management dashboard showing student records, attendance, and fee collection charts"
-              width={1600}
-              height={1008}
-              loading="lazy"
-              className="w-full rounded-2xl border border-navy-foreground/15 shadow-lift"
+            <ProductSlideshow
+              images={[
+                {
+                  src: dashboardLight,
+                  alt: "SchoolMS Pro dashboard showing student totals, fee collection, and recent student records",
+                },
+                {
+                  src: dashboardDark,
+                  alt: "SchoolMS Pro dashboard in dark mode showing student totals, fee collection, and recent student records",
+                },
+              ]}
+              intervalMs={35000}
+              className="w-full"
             />
           </Reveal>
         </div>
