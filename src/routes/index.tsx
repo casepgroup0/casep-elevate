@@ -206,7 +206,7 @@ function Home() {
               academic administration, fees, communication, and reporting into one centralized
               system.
             </p>
-            <ul className="mt-6 grid gap-2.5 sm:mt-7 sm:grid-cols-2">
+            <ul className="mt-6 grid grid-cols-2 gap-x-4 gap-y-2.5 sm:mt-7">
               {product.features.map((feature) => (
                 <li
                   key={feature}
