@@ -28,7 +28,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="flex flex-row justify-between gap-6 sm:gap-8">
+        <div className="flex flex-row justify-between gap-6 px-3 sm:gap-8 sm:px-0">
           <div>
             <h3 className="text-sm font-semibold uppercase tracking-wide text-navy-foreground/90">
               Company
@@ -71,7 +71,7 @@ export function Footer() {
           <h3 className="text-center text-sm font-semibold uppercase tracking-wide text-navy-foreground/90">
             Connect With Us
           </h3>
-          <div className="mt-4 flex flex-row justify-between gap-6 sm:gap-8">
+          <div className="mt-4 flex flex-row justify-between gap-6 px-3 sm:gap-8 sm:px-0">
             <div>
               <h4 className="text-sm font-semibold uppercase tracking-wide text-navy-foreground/90">
                 Contact
